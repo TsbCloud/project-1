@@ -2,7 +2,7 @@ import java.util.*;
 public class FunFactory {
     //int game_card=0;
     static String[]games= {"G1","G2","G3","G4","G5","G6","G7","G8","G9","G10"};
-              
+    static HashSet<String> l= new HashSet();          
    //static String username1;
     //static int password1;
    static  Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
@@ -11,6 +11,7 @@ public class FunFactory {
    static  int test=6;
    static int total=0;
   static int game_Count;
+    static String s;
 //   static String username= "Gamerman123";
 //    static int password= 12345678;
     static int balance=10;
@@ -69,9 +70,28 @@ public class FunFactory {
              transaction();
          }
     }
-    static public void start()
+    static public void start_Game()
     {
-        
+         
+          System.out.println("Select from the following games");
+          for(String x1:games)
+          {
+              System.out.print(x1+" ");
+          }
+          System.out.println("\n");
+          for(int i=0;i<10;i++)
+          {
+              s=sc.nextLine();
+              if(s.equalsIgnoreCase("done"))
+              {
+                  break;
+              }
+                  l.add(s);
+          }
+         for(Object x1:l)
+         {
+             System.out.println(x1);
+         }
     }
     static public void game_Price() // calculate the price of game
     {
